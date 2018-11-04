@@ -86,6 +86,16 @@ public abstract class Hero {
 
     protected abstract String cri();
 
+    public void removeLife(int damage) {
+        int oldLife = life;
+
+        if (damage > 0) {
+            life = life - damage;
+            System.out.println("Joueur " + getPlayerNumber() + " perd " + (oldLife - life) + " points de vie");
+        }
+        if (life == 0) System.out.println("Joueur " + playerNumber + " est mort");
+    }
+
 
 }
 
