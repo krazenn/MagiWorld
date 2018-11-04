@@ -17,16 +17,21 @@ public class Rodeur extends Hero {
 
     @Override
     public void basicAttack(Hero hero) {
-
+        System.out.println("Joueur " + getPlayerNumber() + " utilise Tir à l'Arc et inflige " + getAgility() + " dommages");
+        hero.removeLife(getAgility());
     }
 
     @Override
     public void specialAttack(Hero hero) {
-
+        int concentration;
+        concentration = (getLevel()/2);
+        System.out.print("Joueur " + getPlayerNumber() + " utilise Concentration et ");
+        System.out.print("gagne " + concentration + " en Agilité\n");
+        setAgility(getAgility() + concentration);
     }
 
     @Override
     protected String cri() {
-        return null;
+        return "Aaaahhh";
     }
 }

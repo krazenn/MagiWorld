@@ -84,6 +84,10 @@ public abstract class Hero {
      */
     public abstract void specialAttack(Hero hero);
 
+    public void setAgility(int agility) {
+        this.agility = agility;
+    }
+
     protected abstract String cri();
 
     public void removeLife(int damage) {

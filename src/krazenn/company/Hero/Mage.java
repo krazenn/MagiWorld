@@ -17,16 +17,25 @@ public class Mage extends Hero{
 
     @Override
     public void basicAttack(Hero hero) {
-
+        System.out.println("Joueur " + getPlayerNumber() + " utilise Boule de Feu et inflige " + getIntelligence() + " dommages");
+        hero.removeLife(getIntelligence());
     }
 
     @Override
     public void specialAttack(Hero hero) {
-
+        int soin;
+        int maxLife = getLevel()*5;
+        soin = getIntelligence()*2;
+        System.out.print("Joueur " + getPlayerNumber() + " utilise Soin et ");
+        if (soin + getLife() > maxLife){
+            System.out.println("gagne " + (maxLife - getLife()) + " en Vitalité\n");
+        }else {
+            System.out.print("gagne " + soin + " en Vitalité\n");
+        }
     }
 
     @Override
     protected String cri() {
-        return null;
+        return "Abracadabra";
     }
 }
