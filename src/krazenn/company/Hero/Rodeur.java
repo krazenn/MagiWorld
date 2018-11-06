@@ -12,7 +12,7 @@ public class Rodeur extends Hero {
      * @param playerNumber numéro du joueur
      */
     public Rodeur(int level, int life, int power, int agility, int intelligence, int playerNumber) {
-        super(level, life, power, agility, intelligence, playerNumber);
+        super(level, life ,power, agility, intelligence, playerNumber);
     }
 
     @Override

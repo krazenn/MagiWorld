@@ -1,8 +1,11 @@
 package krazenn.company;
 
+import krazenn.company.Game.Game;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Game game = new Game();
+        game.run();
     }
 }

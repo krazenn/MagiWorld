@@ -3,7 +3,6 @@ package krazenn.company.Hero;
 public class Mage extends Hero{
     /**
      * Contructeur
-     *
      * @param level        niveau du héro
      * @param life         vie du héro
      * @param power        force du héro
@@ -23,15 +22,17 @@ public class Mage extends Hero{
 
     @Override
     public void specialAttack(Hero hero) {
-        int soin;
-        int maxLife = getLevel()*5;
-        soin = getIntelligence()*2;
+        int currentVie = getLife();
+        int maxLife = getLevel() * 5;
+        addLife(((currentVie + getIntelligence()*2) >= maxLife) ? maxLife - getLife() : getIntelligence()*2);
+
+    }
+
+    private void addLife(int Life) {
+        int currentLife = getLife();
+        setLife(getLife() + Life);
         System.out.print("Joueur " + getPlayerNumber() + " utilise Soin et ");
-        if (soin + getLife() > maxLife){
-            System.out.println("gagne " + (maxLife - getLife()) + " en Vitalité\n");
-        }else {
-            System.out.print("gagne " + soin + " en Vitalité\n");
-        }
+        System.out.print("gagne " + (getLife() - currentLife) + " en Vitalité\n");
     }
 
     @Override

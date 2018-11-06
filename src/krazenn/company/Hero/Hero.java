@@ -27,13 +27,16 @@ public abstract class Hero {
         this.playerNumber = playerNumber;
     }
 
-
     public int getLevel() {
         return level;
     }
 
     public int getLife() {
         return life;
+    }
+
+    public void setLife(int life) {
+        this.life = life;
     }
 
     public int getPower() {
@@ -54,7 +57,8 @@ public abstract class Hero {
 
     /**
      * Présentation du héro
-     * @return le héro sélectionné avec son niveau et ses compétences
+     * @return le héro sélectionné son nom avec son niveau et ses compétences
+     * getClass().getSimpleName() récupère la classe utilisé et renvoie le nom de la class
      */
     public String presentation() {
         return (cri() +  " je suis le " + getClass().getSimpleName() +
@@ -97,7 +101,9 @@ public abstract class Hero {
             life = life - damage;
             System.out.println("Joueur " + getPlayerNumber() + " perd " + (oldLife - life) + " points de vie");
         }
-        if (life == 0) System.out.println("Joueur " + playerNumber + " est mort");
+        else if (life == 0){
+             System.out.println("Joueur " + getPlayerNumber() + " est mort");
+        }
     }
 
 
