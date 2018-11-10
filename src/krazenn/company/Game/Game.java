@@ -55,16 +55,17 @@ public class Game {
                 System.out.println("Veuillez choisir la classe de votre Hero (1 : Guerrier, 2 : Rôdeur, 3 : Mage)");
                 playerClass = sc.nextInt();
             }while (playerClass < 1 || playerClass > 3);
-            System.out.println("Niveau du Hero ?");
-            int level = sc.nextInt();
-            int life = level * 5;
-            System.out.println("Force du Hero ?");
-            int power = sc.nextInt();
-            System.out.println("Agilité du Hero ?");
-            int agility = sc.nextInt();
-            System.out.println("Intelligence du Hero ?");
-            int intelligence = sc.nextInt();
+                System.out.println("Niveau du Hero ?");
+                int level = sc.nextInt();
+                int life = level * 5;
+                System.out.println("Force du Hero ?");
+                int power = sc.nextInt();
+                System.out.println("Agilité du Hero ?");
+                int agility = sc.nextInt();
+                System.out.println("Intelligence du Hero ?");
+                int intelligence = sc.nextInt();
             return selectPlayer(playerClass, level, life, power, agility, intelligence, playerNumber);
+
 
     }
 
