@@ -50,20 +50,31 @@ public class Game {
 
     private Hero createPlayer(int playerNumber) {
             int playerClass;
+            int level;
+            int power;
+            int agility;
+            int intelligence;
             System.out.println("Création du Hero du joueur " + playerNumber);
             do {
                 System.out.println("Veuillez choisir la classe de votre Hero (1 : Guerrier, 2 : Rôdeur, 3 : Mage)");
                 playerClass = sc.nextInt();
             }while (playerClass < 1 || playerClass > 3);
+            do {
                 System.out.println("Niveau du Hero ?");
-                int level = sc.nextInt();
+                level = sc.nextInt();
+            }while (level < 1 || level > 100);
                 int life = level * 5;
+            do {
                 System.out.println("Force du Hero ?");
-                int power = sc.nextInt();
+                power = sc.nextInt();
                 System.out.println("Agilité du Hero ?");
-                int agility = sc.nextInt();
+                agility = sc.nextInt();
                 System.out.println("Intelligence du Hero ?");
-                int intelligence = sc.nextInt();
+                intelligence = sc.nextInt();
+                if (power + agility + intelligence != level){
+                    System.out.println("Vous devez attribuer autant de point de compétence que le niveau du Héro");
+                }
+            }while (power + agility + intelligence != level);
             return selectPlayer(playerClass, level, life, power, agility, intelligence, playerNumber);
 
 
